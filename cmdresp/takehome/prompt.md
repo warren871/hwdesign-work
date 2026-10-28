@@ -211,3 +211,4 @@ reports in the project folder so they can be committed and reviewed.
 | Version | Change | Why |
 | --- | --- | --- |
 | 1 | Initial FIR specification | Use a programmable, stateful FIR filter for the take-home project. |
+| 2 | Clarified the host-visible stream framing: use a physical AXI-Stream TLAST sideband; CONFIG carries its command and all eight coefficient words in one TLAST-terminated header burst; DATA carries its command and a full 32-bit count word (valid 1..256) in one TLAST-terminated header burst, followed by a separate sample burst; responses use separate TLAST-terminated header and result bursts. | Make the wire-level header boundaries, N=256 count encoding, and TLAST placement unambiguous for host software. This records implementation choices without changing the requested FIR behavior or the one-sample-per-clock throughput target. |

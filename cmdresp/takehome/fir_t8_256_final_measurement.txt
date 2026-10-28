@@ -1,0 +1,10 @@
+VCD: vcd/fir_t8_256_final.vcd
+AXI signals: ap_clk, in_r_TVALID/TREADY/TDATA/TLAST, out_r_TVALID/TREADY/TDATA/TLAST
+CONFIG tx_id=15, T=8 at cycle=572; DATA command cycle=589, N=256, count TLAST=1
+Payload accepted=256, first_cycle=592, last_cycle=1355, inclusive_cycles=764
+Measured payload rate=256/764=0.3350785 samples/clock
+Input TLAST: count header=cycle 590; payload only final sample=cycle 1355
+Response header: tx_id=16 TLAST=1 cycle=1362
+Result TLAST: only final of 256 words, cycle=14930; DATA-command-to-final-result-inclusive=14342 cycles
+Payload inter-transfer gaps={2: 2, 3: 253}
+Vitis transaction 7 latency=14362 cycles, interval=14378 cycles

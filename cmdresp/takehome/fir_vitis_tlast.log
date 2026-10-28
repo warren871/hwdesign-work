@@ -1,0 +1,784 @@
+
+****** vitis-run v2026.1 (64-bit)
+  **** SW Build 6497934 on 2026-06-16-10:22:25
+  **** Start of session at: Wed Oct 28 00:52:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2026.1 6493734
+Sourcing Tcl script '/home/wx2352/hwdesign-work/cmdresp/takehome/run.tcl'
+INFO: [HLS 200-1510] Running: open_project fir_proj 
+WARNING: [HLS 200-2182] The 'fir_proj' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening solution '/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj'.
+INFO: [HLS 200-1510] Running: set_top fir_accel 
+INFO: [HLS 200-1510] Running: add_files fir_top.cpp 
+INFO: [HLS 200-10] Adding design file 'fir_top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb fir_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'fir_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Opening solution '/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../fir_tb.cpp in debug mode
+   Compiling ../../../../fir_top.cpp in debug mode
+   Generating csim.exe
+PASS fir_example_1
+status_halted=0 error=0 txid=0 cycles=3 (fir_example_1)
+PASS fir_example_3
+status_halted=0 error=0 txid=0 cycles=2 (fir_example_3)
+PASS fir_rounding_halfway
+status_halted=0 error=0 txid=0 cycles=4 (fir_rounding_halfway)
+PASS fir_saturation
+status_halted=0 error=0 txid=0 cycles=2 (fir_saturation)
+PASS fir_negative_saturation
+status_halted=0 error=0 txid=0 cycles=2 (fir_negative_saturation)
+PASS fir_negative_boundary_just_above
+status_halted=0 error=0 txid=0 cycles=1 (fir_negative_boundary_just_above)
+PASS fir_positive_boundary
+status_halted=0 error=0 txid=0 cycles=1 (fir_positive_boundary)
+PASS fir_t8_256
+status_halted=0 error=0 txid=0 cycles=256 (fir_t8_256)
+PASS fir_state_carry
+CASE err_unknown: halted=1 error=2 txid=18 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_unknown
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_unknown)
+CASE err_invalid_tap: halted=1 error=3 txid=52 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_tap_error
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_tap_error)
+CASE err_data_before_config: halted=1 error=4 txid=86 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_data_error
+recovery_status_halted=0 error=0 txid=0 cycles=3 (recovery_after_data_error)
+CASE err_invalid_sample_count: halted=1 error=5 txid=120 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_sample_error
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_sample_error)
+CASE err_invalid_sample_count_high_bits: halted=1 error=5 txid=121 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_sample_high_bits
+recovery_status_halted=0 error=0 txid=0 cycles=1 (recovery_after_sample_high_bits)
+CASE err_malformed_header: halted=1 error=1 txid=153 unread=1 out_empty=1
+PASS recovery_after_malformed_header
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_malformed_header)
+CASE err_early_tlast: halted=1 error=6 txid=162 unread=1 out_empty=1
+PASS recovery_after_early_tlast
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_early_tlast)
+CASE err_missing_tlast: halted=1 error=7 txid=178 unread=1 out_empty=1
+PASS recovery_after_missing_tlast
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_missing_tlast)
+WARNING [HLS SIM]: hls::stream 'missing_tlast_in' contains leftover data, which may result in RTL simulation hanging.
+WARNING [HLS SIM]: hls::stream 'early_tlast_in' contains leftover data, which may result in RTL simulation hanging.
+WARNING [HLS SIM]: hls::stream 'bad_header_in' contains leftover data, which may result in RTL simulation hanging.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 268
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:04; Allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.9 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.1 seconds; current allocated memory: 344.676 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file 'fir_top.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5.49 seconds. CPU system time: 0.76 seconds. Elapsed time: 6.71 seconds; current allocated memory: 347.340 MB.
+INFO: [HLS 200-1995] There were 3,880 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+WARNING: [HLS 214-275] In loop 'VITIS_LOOP_224_8 (fir_top.cpp:224:35)', partially UNROLL (fir_top.cpp:225:1) is converted into complete unroll due to PIPELINE pragma above (fir_top.cpp:70:1) as a pipelined region cannot contain loops that are not fully unrolled (fir_top.cpp:224:35)
+WARNING: [HLS 214-275] In loop 'VITIS_LOOP_218_7 (fir_top.cpp:218:35)', partially UNROLL (fir_top.cpp:219:1) is converted into complete unroll due to PIPELINE pragma above (fir_top.cpp:70:1) as a pipelined region cannot contain loops that are not fully unrolled (fir_top.cpp:218:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_88_2' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:88:22)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_184_5' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:184:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_217_6' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:217:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_218_7' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:218:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_224_8' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:224:35)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_128_3' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:128:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_133_4' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:133:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_81_1' is marked as complete unroll implied by the pipeline pragma (fir_top.cpp:81:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_128_3' (fir_top.cpp:128:31) in function 'fir_accel' completely with a factor of 8 (fir_top.cpp:62:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_133_4' (fir_top.cpp:133:31) in function 'fir_accel' completely with a factor of 8 (fir_top.cpp:62:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_81_1' (fir_top.cpp:81:22) in function 'fir_accel' completely with a factor of 8 (fir_top.cpp:62:0)
+INFO: [HLS 200-1995] There were 1,183 instructions in the design after the 'Unroll/Inline' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 895 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-178] Inlining function 'int saturate_q15<int>(int)' into 'round_q15_even(long long)' (fir_top.cpp:31:0)
+INFO: [HLS 214-178] Inlining function 'round_q15_even(long long)' into 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:62:0)
+INFO: [HLS 214-178] Inlining function 'pack_result(int)' into 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:62:0)
+INFO: [HLS 200-1995] There were 867 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 730 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 706 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 706 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 706 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 706 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,026 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 997 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:100:17)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:106:17)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:111:13)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:123:17)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:135:21)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:141:21)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:160:17)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:165:17)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:172:17)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:177:17)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:186:21)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:192:21)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:197:21)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:242:9)
+INFO: [HLS 214-364] Automatically inlining function 'signal_error(ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<16>, ap_uint<32>)' to improve effectiveness of pipeline pragma in function 'fir_accel(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&, ap_uint<32>&)' (fir_top.cpp:146:21)
+INFO: [HLS 200-1995] There were 885 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 742 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 739 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 642 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_88_2' (fir_top.cpp:88:22) in function 'fir_accel' as it has a variable trip count (fir_top.cpp:88:22)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_184_5' (fir_top.cpp:184:31) in function 'fir_accel' as it has a variable trip count (fir_top.cpp:184:31)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_217_6' (fir_top.cpp:217:31) in function 'fir_accel' as it has a variable trip count (fir_top.cpp:217:31)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_218_7' (fir_top.cpp:218:35) in function 'fir_accel' as it has a variable trip count (fir_top.cpp:218:35)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_224_8' (fir_top.cpp:224:35) in function 'fir_accel' as it has a variable trip count (fir_top.cpp:224:35)
+INFO: [HLS 200-1995] There were 439 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.23 seconds. CPU system time: 0.64 seconds. Elapsed time: 8.67 seconds; current allocated memory: 357.750 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 357.750 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 358.992 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 359.262 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (fir_top.cpp:31:37) to (fir_top.cpp:217:31) in function 'fir_accel'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 382.152 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 385.266 MB.
+INFO: [HLS 200-2255] Checking Wire Delay Status: Wire Delay Mode is ON
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fir_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'fir_accel': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.27 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.32 seconds; current allocated memory: 390.699 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 390.699 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/in_r_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/in_r_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/in_r_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/in_r_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/out_r_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/out_r_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/out_r_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/out_r_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/status_halted' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/status_error' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/status_txid' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir_accel/status_cycles' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fir_accel' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'status_halted', 'status_error', 'status_txid', 'status_cycles' and 'return' to AXI-Lite port ctrl.
+INFO: [RTGEN 206-100] Generating core module 'mul_16s_16s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_accel'.
+INFO: [RTMG 210-278] Implementing memory 'fir_accel_coeffs_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'fir_accel_history_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'fir_accel_sample_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 390.699 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.57 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.79 seconds; current allocated memory: 397.715 MB.
+INFO: [HLS 200-2225] Wrote inferred directives to file /home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.86 seconds. CPU system time: 0.12 seconds. Elapsed time: 1.07 seconds; current allocated memory: 400.844 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fir_accel.
+INFO: [VLOG 209-307] Generating Verilog RTL for fir_accel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 143.42 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:19; Allocated memory: 56.168 MB.
+INFO: [HLS 200-1510] Running: cosim_design -rtl verilog -trace_level port 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/eda/xilinx/2026.1/Vitis/lnx64/tools/clang-16/bin/clang++"
+   Compiling apatb_fir_accel.cpp
+   Compiling apatb_fir_accel_util.cpp
+   Compiling fir_tb.cpp_pre.cpp
+   Compiling fir_top.cpp_pre.cpp
+   Compiling apatb_fir_accel_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+PASS fir_example_1
+status_halted=0 error=0 txid=0 cycles=3 (fir_example_1)
+PASS fir_example_3
+status_halted=0 error=0 txid=0 cycles=2 (fir_example_3)
+PASS fir_rounding_halfway
+status_halted=0 error=0 txid=0 cycles=4 (fir_rounding_halfway)
+PASS fir_saturation
+status_halted=0 error=0 txid=0 cycles=2 (fir_saturation)
+PASS fir_negative_saturation
+status_halted=0 error=0 txid=0 cycles=2 (fir_negative_saturation)
+PASS fir_negative_boundary_just_above
+status_halted=0 error=0 txid=0 cycles=1 (fir_negative_boundary_just_above)
+PASS fir_positive_boundary
+status_halted=0 error=0 txid=0 cycles=1 (fir_positive_boundary)
+PASS fir_t8_256
+status_halted=0 error=0 txid=0 cycles=256 (fir_t8_256)
+PASS fir_state_carry
+CASE err_unknown: halted=1 error=2 txid=18 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_unknown
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_unknown)
+CASE err_invalid_tap: halted=1 error=3 txid=52 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_tap_error
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_tap_error)
+CASE err_data_before_config: halted=1 error=4 txid=86 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_data_error
+recovery_status_halted=0 error=0 txid=0 cycles=3 (recovery_after_data_error)
+CASE err_invalid_sample_count: halted=1 error=5 txid=120 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_sample_error
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_sample_error)
+CASE err_invalid_sample_count_high_bits: halted=1 error=5 txid=121 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_sample_high_bits
+recovery_status_halted=0 error=0 txid=0 cycles=1 (recovery_after_sample_high_bits)
+CASE err_malformed_header: halted=1 error=1 txid=153 unread=1 out_empty=1
+PASS recovery_after_malformed_header
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_malformed_header)
+CASE err_early_tlast: halted=1 error=6 txid=162 unread=1 out_empty=1
+PASS recovery_after_early_tlast
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_early_tlast)
+CASE err_missing_tlast: halted=1 error=7 txid=178 unread=1 out_empty=1
+PASS recovery_after_missing_tlast
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_missing_tlast)
+WARNING [HLS SIM]: hls::stream 'missing_tlast_in' contains leftover data, which may result in RTL simulation hanging.
+WARNING [HLS SIM]: hls::stream 'early_tlast_in' contains leftover data, which may result in RTL simulation hanging.
+WARNING [HLS SIM]: hls::stream 'bad_header_in' contains leftover data, which may result in RTL simulation hanging.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 268
+INFO: [COSIM 212-333] Generating C post check test bench ...
+This_is_a_noneblocking_read_case
+INFO: [COSIM 212-12] Generating RTL test bench ...
+find not read role field
+find not read role field
+find not read role field
+find not read role field
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /eda/xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_fir_accel_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj fir_accel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_22 -L floating_point_v7_0_27 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./svtb -i ./file_agent -i ./fir_accel_subsystem -s fir_accel -debug all 
+Multi-threading is on. Using 126 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_accel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel_sample_buf_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_accel_sample_buf_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_fir_accel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel_coeffs_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_accel_coeffs_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel_history_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_accel_history_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel_mul_16s_16s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_accel_mul_16s_16s_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_accel_regslice_both
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel_ctrl_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_accel_ctrl_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/svr/svr_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/svr/svr_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/fir_accel_subsystem/fir_accel_subsystem_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/wx2352/hwdesign-work/cmdresp/takehome/fir_proj/solution1/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sv_module_top
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.svr_pkg
+Compiling package xil_defaultlib.file_agent_pkg
+Compiling package xil_defaultlib.axi_pkg
+Compiling package xil_defaultlib.fir_accel_subsystem_pkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.fir_accel_coeffs_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.fir_accel_history_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.fir_accel_sample_buf_RAM_AUTO_1R...
+Compiling module xil_defaultlib.fir_accel_ctrl_s_axi
+Compiling module xil_defaultlib.fir_accel_mul_16s_16s_32_1_1(NUM...
+Compiling module xil_defaultlib.fir_accel_regslice_both(DataWidt...
+Compiling module xil_defaultlib.fir_accel_regslice_both(DataWidt...
+Compiling module xil_defaultlib.fir_accel_regslice_both(DataWidt...
+Compiling module xil_defaultlib.fir_accel
+Compiling module xil_defaultlib.misc_interface_default
+Compiling module xil_defaultlib.svr_if(DATA_WIDTH=41)
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=7,STRB_WIDTH=4...
+Compiling module xil_defaultlib.sv_module_top
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=37)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_fir_accel_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir_accel
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Wed Oct 28 00:53:05 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/fir_accel/xsim_script.tcl
+# xsim {fir_accel} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=fir_accel_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -view {{fir_accel_dataflow_ana.wcfg}} -tclbatch {fir_accel.tcl} -protoinst {fir_accel.protoinst}
+INFO: [Wavedata 42-565] Reading protoinst file fir_accel.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_fir_accel_top/AESL_inst_fir_accel//AESL_inst_fir_accel_activity
+Time resolution is 1 ps
+open_wave_config fir_accel_dataflow_ana.wcfg
+source fir_accel.tcl
+## log_wave [get_objects -filter {type == in_port || type == out_port || type == inout_port || type == port} /apatb_fir_accel_top/AESL_inst_fir_accel/*]
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set return_group [add_wave_group return(axis) -into $coutputgroup]
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/out_r_TLAST -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/out_r_TSTRB -into $return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/out_r_TKEEP -into $return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/out_r_TREADY -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/out_r_TVALID -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/out_r_TDATA -into $return_group -radix hex
+## set status_halted__status_error__status_txid__status_cycles__return_group [add_wave_group status_halted__status_error__status_txid__status_cycles__return(axi_slave) -into $coutputgroup]
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/interrupt -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_BRESP -into $status_halted__status_error__status_txid__status_cycles__return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_BREADY -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_BVALID -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_RRESP -into $status_halted__status_error__status_txid__status_cycles__return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_RDATA -into $status_halted__status_error__status_txid__status_cycles__return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_RREADY -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_RVALID -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_ARREADY -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_ARVALID -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_ARADDR -into $status_halted__status_error__status_txid__status_cycles__return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_WSTRB -into $status_halted__status_error__status_txid__status_cycles__return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_WDATA -into $status_halted__status_error__status_txid__status_cycles__return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_WREADY -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_WVALID -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_AWREADY -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_AWVALID -into $status_halted__status_error__status_txid__status_cycles__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/s_axi_ctrl_AWADDR -into $status_halted__status_error__status_txid__status_cycles__return_group -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set return_group [add_wave_group return(axis) -into $cinputgroup]
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/in_r_TLAST -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/in_r_TSTRB -into $return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/in_r_TKEEP -into $return_group -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/in_r_TREADY -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/in_r_TVALID -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/in_r_TDATA -into $return_group -radix hex
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/ap_rst_n -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_fir_accel_top/AESL_inst_fir_accel/ap_clk -into $clockgroup
+## save_wave_config fir_accel.wcfg
+## run all
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------------------------------------------------
+Name                                               Type                              Size  Value          
+----------------------------------------------------------------------------------------------------------
+uvm_test_top                                       fir_accel_test_lib                -     @370           
+  top_env                                          fir_accel_env                     -     @381           
+    axi_lite_ctrl                                  uvm_env                           -     @428           
+      item_rtr_port                                uvm_analysis_port                 -     @447           
+      item_wtr_port                                uvm_analysis_port                 -     @437           
+      master                                       uvm_agent                         -     @840           
+        ardrv                                      uvm_driver #(REQ,RSP)             -     @1515          
+          item_read_imp                            uvm_analysis_port                 -     @1544          
+          rsp_port                                 uvm_analysis_port                 -     @1534          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1524          
+          m_num_sent                               integral                          32    'h0            
+        arsqr                                      axi_sequencer                     -     @1554          
+          rsp_export                               uvm_analysis_export               -     @1563          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1681          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        awdrv                                      uvm_driver #(REQ,RSP)             -     @987           
+          item_read_imp                            uvm_analysis_port                 -     @1016          
+          rsp_port                                 uvm_analysis_port                 -     @1006          
+          seq_item_port                            uvm_seq_item_pull_port            -     @996           
+          m_num_sent                               integral                          32    'h0            
+        awsqr                                      axi_sequencer                     -     @1026          
+          rsp_export                               uvm_analysis_export               -     @1035          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1153          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        bdrv                                       uvm_driver #(REQ,RSP)             -     @1339          
+          item_read_imp                            uvm_analysis_port                 -     @1368          
+          rsp_port                                 uvm_analysis_port                 -     @1358          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1348          
+          m_num_sent                               integral                          32    'h0            
+        bsqr                                       axi_sequencer                     -     @1378          
+          rsp_export                               uvm_analysis_export               -     @1387          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1505          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        rdrv                                       uvm_driver #(REQ,RSP)             -     @1691          
+          item_read_imp                            uvm_analysis_port                 -     @1720          
+          rsp_port                                 uvm_analysis_port                 -     @1710          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1700          
+          m_num_sent                               integral                          32    'h0            
+        rsqr                                       axi_sequencer                     -     @1730          
+          rsp_export                               uvm_analysis_export               -     @1739          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1857          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+        wdrv                                       uvm_driver #(REQ,RSP)             -     @1163          
+          item_read_imp                            uvm_analysis_port                 -     @1192          
+          rsp_port                                 uvm_analysis_port                 -     @1182          
+          seq_item_port                            uvm_seq_item_pull_port            -     @1172          
+          m_num_sent                               integral                          32    'h0            
+        wsqr                                       axi_sequencer                     -     @1202          
+          rsp_export                               uvm_analysis_export               -     @1211          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1329          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+      monitor                                      uvm_monitor                       -     @662           
+        item_ar2r_port                             uvm_analysis_port                 -     @731           
+        item_ar_port                               uvm_analysis_port                 -     @701           
+        item_aw2b_port                             uvm_analysis_port                 -     @721           
+        item_aw_port                               uvm_analysis_port                 -     @671           
+        item_b_port                                uvm_analysis_port                 -     @691           
+        item_r_port                                uvm_analysis_port                 -     @711           
+        item_w_port                                uvm_analysis_port                 -     @681           
+        checks_enable                              integral                          1     'h1            
+        coverage_enable                            integral                          1     'h1            
+      state                                        axi_state                         -     @741           
+        ar2r_imp                                   uvm_analysis_imp_ar2r             -     @810           
+        ar_imp                                     uvm_analysis_imp_ar               -     @780           
+        aw2b_imp                                   uvm_analysis_imp_aw2b             -     @800           
+        aw_imp                                     uvm_analysis_imp_aw               -     @750           
+        b_imp                                      uvm_analysis_imp_b                -     @770           
+        item_rtr_port                              uvm_analysis_port                 -     @830           
+        item_wtr_port                              uvm_analysis_port                 -     @820           
+        r_imp                                      uvm_analysis_imp_r                -     @790           
+        w_imp                                      uvm_analysis_imp_w                -     @760           
+        avg_rate                                   integral                          32    'h0            
+        exp_rate                                   integral                          32    'h0            
+        win_size                                   integral                          32    'h0            
+        bqnum_for_slaseq                           integral                          32    'h0            
+        rq_from_model_num                          integral                          32    'h0            
+      vsqr                                         axi_virtual_sequencer             -     @849           
+        rsp_export                                 uvm_analysis_export               -     @858           
+        seq_item_export                            uvm_seq_item_pull_imp             -     @976           
+        arbitration_queue                          array                             0     -              
+        lock_queue                                 array                             0     -              
+        num_last_reqs                              integral                          32    'd1            
+        num_last_rsps                              integral                          32    'd1            
+      cfg                                          axi_cfg                           -     @400           
+        has_checker                                integral                          1     'h1            
+        has_coverage                               integral                          1     'h1            
+        id_num                                     integral                          32    'h1            
+        reset_level                                reset_level_enum                  32    RESET_LEVEL_LOW
+        drv_type                                   drv_type_enum                     32    MASTER         
+        write_latency_mode                         latency_mode_enum                 32    CHANNEL_FIRST  
+        read_latency_mode                          latency_mode_enum                 32    CHANNEL_FIRST  
+        clatency                                   axi_latency                       -     @424           
+          wr_latency                               integral                          32    'h0            
+          rd_latency                               integral                          32    'h0            
+    env_master_svr_in_r                            uvm_env                           -     @401           
+      m_agt                                        uvm_agent                         -     @1935          
+        drv                                        uvm_driver #(REQ,RSP)             -     @2083          
+          rsp_port                                 uvm_analysis_port                 -     @2102          
+          seq_item_port                            uvm_seq_item_pull_port            -     @2092          
+        mon                                        uvm_monitor                       -     @2112          
+          item_collect_port                        uvm_analysis_port                 -     @2123          
+        sqr                                        uvm_sequencer                     -     @1946          
+          rsp_export                               uvm_analysis_export               -     @1955          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @2073          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+    env_slave_svr_out_r                            uvm_env                           -     @414           
+      s_agt                                        uvm_agent                         -     @2141          
+        drv                                        uvm_driver #(REQ,RSP)             -     @2289          
+          rsp_port                                 uvm_analysis_port                 -     @2308          
+          seq_item_port                            uvm_seq_item_pull_port            -     @2298          
+        mon                                        uvm_monitor                       -     @2318          
+          item_collect_port                        uvm_analysis_port                 -     @2329          
+        sqr                                        uvm_sequencer                     -     @2152          
+          rsp_export                               uvm_analysis_export               -     @2161          
+          seq_item_export                          uvm_seq_item_pull_imp             -     @2279          
+          arbitration_queue                        array                             0     -              
+          lock_queue                               array                             0     -              
+          num_last_reqs                            integral                          32    'd1            
+          num_last_rsps                            integral                          32    'd1            
+    fir_accel_virtual_sqr                          fir_accel_virtual_sequencer       -     @519           
+      rsp_export                                   uvm_analysis_export               -     @528           
+      seq_item_export                              uvm_seq_item_pull_imp             -     @646           
+      arbitration_queue                            array                             0     -              
+      lock_queue                                   array                             0     -              
+      num_last_reqs                                integral                          32    'd1            
+      num_last_rsps                                integral                          32    'd1            
+    refm                                           fir_accel_reference_model         -     @457           
+      trans_num_idx                                integral                          32    'h0            
+    subsys_mon                                     fir_accel_subsystem_monitor       -     @470           
+      ctrl_rtr_imp                                 uvm_analysis_imp_axi_rtr_ctrl     -     @509           
+      ctrl_wtr_imp                                 uvm_analysis_imp_axi_wtr_ctrl     -     @499           
+      scbd                                         fir_accel_scoreboard              -     @2356          
+        refm                                       fir_accel_reference_model         -     @457           
+          trans_num_idx                            integral                          32    'h0            
+        file_rd_TVOUT_transaction_size             <unknown>                         -     @2366          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          TV_FILE_num                              integral                          32    'h0            
+          HEX_read                                 integral                          32    'h0            
+          DEC_read                                 integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+          TV_FILE_COMPARE                          string                            0     ""             
+          fp_compare                               integral                          32    'hxxxxxxxx     
+        TVOUT_transaction_size_queue               da(integral)                      0     -              
+        file_wr_port_out_r_out_r_TDATA             <unknown>                         -     @2367          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_out_r_out_r_TDATA          integral                          32    'h0            
+        write_section_done_out_r_out_r_TDATA       integral                          32    'h0            
+        file_wr_port_out_r_out_r_TKEEP             <unknown>                         -     @2368          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_out_r_out_r_TKEEP          integral                          32    'h0            
+        write_section_done_out_r_out_r_TKEEP       integral                          32    'h0            
+        file_wr_port_out_r_out_r_TSTRB             <unknown>                         -     @2369          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_out_r_out_r_TSTRB          integral                          32    'h0            
+        write_section_done_out_r_out_r_TSTRB       integral                          32    'h0            
+        file_wr_port_out_r_out_r_TLAST             <unknown>                         -     @2370          
+          TV_FILE                                  string                            0     ""             
+          fp                                       integral                          32    'hxxxxxxxx     
+          file_open                                integral                          32    'h0            
+          write_file_done                          integral                          32    'h0            
+          write_section_done                       integral                          32    'h0            
+          TRANSACTION_NUM                          integral                          32    'h0            
+          transaction_num_idx                      integral                          32    'h0            
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+          transaction_depth_idx                    integral                          32    'h0            
+          ap_done_num_idx                          integral                          32    'h0            
+          is_binary                                integral                          32    'h0            
+        write_file_done_out_r_out_r_TLAST          integral                          32    'h0            
+        write_section_done_out_r_out_r_TLAST       integral                          32    'h0            
+      svr_master_in_r_imp                          uvm_analysis_imp_svr_master_in_r  -     @479           
+      svr_slave_out_r_imp                          uvm_analysis_imp_svr_slave_out_r  -     @489           
+    env_master_svr_in_r                            uvm_env                           -     @401           
+    env_slave_svr_out_r                            uvm_env                           -     @414           
+    refm                                           fir_accel_reference_model         -     @457           
+    fir_accel_virtual_sqr                          fir_accel_virtual_sequencer       -     @519           
+    fir_accel_cfg                                  fir_accel_config                  -     @395           
+      port_in_r_cfg                                svr_config                        -     @396           
+        svr_type                                   svr_inst_type                     32    SVR_MASTER     
+        prt_type                                   svr_protocol_type                 32    AXIS           
+        is_active                                  svr_active_passive_enum           1     SVR_ACTIVE     
+        reset_level                                svr_reset_level_enum              1     RESET_LEVEL_LOW
+        spec_cfg                                   svr_spec_cfg_enum                 32    NORMAL         
+        clatency                                   svr_latency                       -     @397           
+          transfer_latency                         integral                          32    'h0            
+      port_out_r_cfg                               svr_config                        -     @398           
+        svr_type                                   svr_inst_type                     32    SVR_SLAVE      
+        prt_type                                   svr_protocol_type                 32    AXIS           
+        is_active                                  svr_active_passive_enum           1     SVR_ACTIVE     
+        reset_level                                svr_reset_level_enum              1     RESET_LEVEL_LOW
+        spec_cfg                                   svr_spec_cfg_enum                 32    NORMAL         
+        clatency                                   svr_latency                       -     @399           
+          transfer_latency                         integral                          32    'h0            
+      ctrl_cfg                                     axi_cfg                           -     @400           
+        has_checker                                integral                          1     'h1            
+        has_coverage                               integral                          1     'h1            
+        id_num                                     integral                          32    'h1            
+        reset_level                                reset_level_enum                  32    RESET_LEVEL_LOW
+        drv_type                                   drv_type_enum                     32    MASTER         
+        write_latency_mode                         latency_mode_enum                 32    CHANNEL_FIRST  
+        read_latency_mode                          latency_mode_enum                 32    CHANNEL_FIRST  
+        clatency                                   axi_latency                       -     @424           
+          wr_latency                               integral                          32    'h0            
+          rd_latency                               integral                          32    'h0            
+      check_ena                                    integral                          32    'h0            
+      cover_ena                                    integral                          32    'h0            
+----------------------------------------------------------------------------------------------------------
+
+UVM_INFO /eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 25 [n/a] @ "125000"
+// RTL Simulation : 1 / 25 [n/a] @ "1035000"
+// RTL Simulation : 2 / 25 [n/a] @ "1855000"
+// RTL Simulation : 3 / 25 [n/a] @ "2835000"
+// RTL Simulation : 4 / 25 [n/a] @ "3655000"
+// RTL Simulation : 5 / 25 [n/a] @ "4475000"
+// RTL Simulation : 6 / 25 [n/a] @ "5035000"
+// RTL Simulation : 7 / 25 [n/a] @ "5595000"
+// RTL Simulation : 8 / 25 [n/a] @ "149375000"
+// RTL Simulation : 9 / 25 [n/a] @ "150455000"
+// RTL Simulation : 10 / 25 [n/a] @ "150685000"
+// RTL Simulation : 11 / 25 [n/a] @ "151505000"
+// RTL Simulation : 12 / 25 [n/a] @ "151745000"
+// RTL Simulation : 13 / 25 [n/a] @ "152445000"
+// RTL Simulation : 14 / 25 [n/a] @ "152675000"
+// RTL Simulation : 15 / 25 [n/a] @ "153515000"
+// RTL Simulation : 16 / 25 [n/a] @ "153905000"
+// RTL Simulation : 17 / 25 [n/a] @ "154725000"
+// RTL Simulation : 18 / 25 [n/a] @ "155115000"
+// RTL Simulation : 19 / 25 [n/a] @ "155675000"
+// RTL Simulation : 20 / 25 [n/a] @ "155955000"
+// RTL Simulation : 21 / 25 [n/a] @ "156655000"
+// RTL Simulation : 22 / 25 [n/a] @ "157065000"
+// RTL Simulation : 23 / 25 [n/a] @ "157765000"
+// RTL Simulation : 24 / 25 [n/a] @ "158205000"
+// RTL Simulation : 25 / 25 [n/a] @ "158905000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 159095 ns : File "/eda/xilinx/2026.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+## quit
+INFO: xsimkernel Simulation Memory Usage: 552212 KB (Peak: 594188 KB), Simulation CPU Usage: 2330 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 28 00:53:12 2026...
+INFO: [COSIM 212-316] Starting C post checking ...
+PASS fir_example_1
+status_halted=0 error=0 txid=0 cycles=3 (fir_example_1)
+PASS fir_example_3
+status_halted=0 error=0 txid=0 cycles=2 (fir_example_3)
+PASS fir_rounding_halfway
+status_halted=0 error=0 txid=0 cycles=4 (fir_rounding_halfway)
+PASS fir_saturation
+status_halted=0 error=0 txid=0 cycles=2 (fir_saturation)
+PASS fir_negative_saturation
+status_halted=0 error=0 txid=0 cycles=2 (fir_negative_saturation)
+PASS fir_negative_boundary_just_above
+status_halted=0 error=0 txid=0 cycles=1 (fir_negative_boundary_just_above)
+PASS fir_positive_boundary
+status_halted=0 error=0 txid=0 cycles=1 (fir_positive_boundary)
+PASS fir_t8_256
+status_halted=0 error=0 txid=0 cycles=256 (fir_t8_256)
+PASS fir_state_carry
+CASE err_unknown: halted=1 error=2 txid=18 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_unknown
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_unknown)
+CASE err_invalid_tap: halted=1 error=3 txid=52 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_tap_error
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_tap_error)
+CASE err_data_before_config: halted=1 error=4 txid=86 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_data_error
+recovery_status_halted=0 error=0 txid=0 cycles=3 (recovery_after_data_error)
+CASE err_invalid_sample_count: halted=1 error=5 txid=120 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_sample_error
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_sample_error)
+CASE err_invalid_sample_count_high_bits: halted=1 error=5 txid=121 unread=1 out_empty=1 cycles=0
+WARNING [HLS SIM]: hls::stream 'in_stream' contains leftover data, which may result in RTL simulation hanging.
+PASS recovery_after_sample_high_bits
+recovery_status_halted=0 error=0 txid=0 cycles=1 (recovery_after_sample_high_bits)
+CASE err_malformed_header: halted=1 error=1 txid=153 unread=1 out_empty=1
+PASS recovery_after_malformed_header
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_malformed_header)
+CASE err_early_tlast: halted=1 error=6 txid=162 unread=1 out_empty=1
+PASS recovery_after_early_tlast
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_early_tlast)
+CASE err_missing_tlast: halted=1 error=7 txid=178 unread=1 out_empty=1
+PASS recovery_after_missing_tlast
+recovery_status_halted=0 error=0 txid=0 cycles=2 (recovery_after_missing_tlast)
+WARNING [HLS SIM]: hls::stream 'missing_tlast_in' contains leftover data, which may result in RTL simulation hanging.
+WARNING [HLS SIM]: hls::stream 'early_tlast_in' contains leftover data, which may result in RTL simulation hanging.
+WARNING [HLS SIM]: hls::stream 'bad_header_in' contains leftover data, which may result in RTL simulation hanging.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 268
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:00:43; Allocated memory: 12.480 MB.
+INFO: [HLS 200-112] Total CPU user time: 172.91 seconds. Total CPU system time: 8.84 seconds. Total elapsed time: 69.52 seconds; peak allocated memory: 413.324 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 1m 11s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

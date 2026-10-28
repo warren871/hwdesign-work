@@ -2,3 +2,14 @@
 **/*.log
 **/.Xil/
 **/__pycache__/
+!cmdresp/takehome/tool_check.log
+!cmdresp/takehome/python_validation.log
+!cmdresp/takehome/fir_vitis.log
+!cmdresp/takehome/fir_vitis_trace.log
+!cmdresp/takehome/vcd_export.log
+!cmdresp/takehome/python_validation_tlast.log
+!cmdresp/takehome/fir_vitis_tlast.log
+!cmdresp/takehome/fir_vitis_final.log
+!cmdresp/takehome/vcd_export_tlast.log
+!cmdresp/takehome/vcd_export_final.log
+!cmdresp/takehome/fir_proj/solution1/sim/verilog/xelab.log

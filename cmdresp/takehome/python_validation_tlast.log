@@ -1,0 +1,22 @@
+PASS example_1: [8192, 12288, 4096]
+PASS example_3: [4096, 4096]
+PASS example_4: [0, 2, 0, -2]
+PASS example_5: [32767, 32767]
+PASS count_n1
+PASS count_n256
+PASS split_data_state_continuity: [8192, 12288, 4096]
+PASS reconfiguration_resets_history: [8192, 12288, 4096, 4096, 4096]
+PASS count_invalid_zero
+PASS count_invalid_high_bits
+PASS err_unknown_command: err=2 tx=18 unread=3
+PASS err_malformed_header: err=1 tx=52 unread=3
+PASS precedence_malformed_over_unknown: err=1 tx=209 unread=2
+PASS precedence_malformed_over_invalid_tap: err=1 tx=211 unread=2
+PASS precedence_data_before_config_over_invalid_count: err=4 tx=210 unread=3
+PASS err_invalid_tap_count: err=3 tx=52 unread=10
+PASS err_data_before_config: err=4 tx=86 unread=5
+PASS err_invalid_sample_count: err=5 tx=120 unread=3
+PASS err_early_tlast
+PASS err_missing_tlast
+PASS neg_boundary_above_floor
+PASS neg_boundary_below_floor
